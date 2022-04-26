@@ -1,0 +1,16 @@
+<div
+  class="button-group"
+  [ngClass]="{
+    'no-wrap': noWrap,
+    'is-disabled': disabled
+  }"
+>
+  <ng-container *ngFor="let item of items">
+    <span
+      class="button button__select-group"
+      [ngClass]="{ 'is-selected': item[label] === selectedItem }"
+      [innerHtml]="item[label]"
+      (click)="selectItem(item)"
+    ></span>
+  </ng-container>
+</div>
